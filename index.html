@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>组件库 · 胶囊按钮与搜索框</title>
+  <title>组件库 · 胶囊按钮、搜索框与复制按钮</title>
   <link rel="stylesheet" href="components.css">
   <style>
     * { box-sizing: border-box; }
@@ -42,6 +42,19 @@
       </form>
     </div>
     <p class="notice" id="demo-status" role="status">输入后按 Enter 可体验搜索提交。</p>
+  </section>
+  <section aria-labelledby="copy-title" id="copy-demo">
+    <h2 id="copy-title">胶囊复制按钮</h2>
+    <div class="demo">
+      <label class="demo-label" for="copy-content">待复制内容</label>
+      <div class="ui-search">
+        <input class="ui-search__input" id="copy-content" type="text" value="这是一段可复制的内容" aria-label="待复制内容">
+      </div>
+      <button class="ui-pill-button ui-copy" style="margin-top:16px" type="button" data-ui-copy data-copy-target="copy-content" aria-label="复制内容">
+        <svg class="ui-copy__icon ui-copy__idle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+        <svg class="ui-copy__icon ui-copy__done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+      </button>
+    </div>
   </section>
 </main>
 <script>
