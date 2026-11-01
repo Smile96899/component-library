@@ -6,15 +6,15 @@
 
 ### 按钮
 
-![按钮](assets/button.png)
+<img src="assets/button.png" alt="按钮" width="280">
 
 ### 搜索框
 
-![搜索框](assets/search.png)
+<img src="assets/search.png" alt="搜索框" width="280">
 
 ### 复制按钮
 
-![复制按钮](assets/copy-button.png)
+<img src="assets/copy-button.png" alt="复制按钮" width="280">
 
 ## 按钮用法
 
