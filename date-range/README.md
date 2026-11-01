@@ -2,7 +2,7 @@
 
 开始日期和结束日期均为 `type="text"`，手动填写年月日，不使用 `type="date"`，不显示日历或下拉选择。独立 CSS / JS，不依赖其他组件。
 
-默认不显示开始/结束标签和日期数字，空输入框只显示居中的 `/ /` 占位符。输入的日期也居中显示；两个输入框仍通过 `aria-label` 提供开始和结束的可访问名称。
+保留“开始日期”和“结束日期”标签，不预填日期数字；空输入框只显示居中的 `/ /` 占位符。输入的日期也居中显示；两个输入框仍通过 `aria-label` 提供开始和结束的可访问名称。
 
 ## 引入
 
@@ -12,16 +12,12 @@
 
 <div class="ui-date-range" data-ui-date-range>
   <div class="ui-date-range__row">
-    <label class="ui-date-range__field">
-
-      <input class="ui-date-range__input" type="text" name="start_date" aria-label="开始日期"
+    <label class="ui-date-range__field"><span class="ui-date-range__label">开始日期</span><input class="ui-date-range__input" type="text" name="start_date" aria-label="开始日期"
              data-date-start placeholder="/ /" inputmode="numeric"
              autocomplete="off" spellcheck="false" maxlength="10">
     </label>
     <span class="ui-date-range__separator" aria-hidden="true">至</span>
-    <label class="ui-date-range__field">
-
-      <input class="ui-date-range__input" type="text" name="end_date" aria-label="结束日期"
+    <label class="ui-date-range__field"><span class="ui-date-range__label">结束日期</span><input class="ui-date-range__input" type="text" name="end_date" aria-label="结束日期"
              data-date-end placeholder="/ /" inputmode="numeric"
              autocomplete="off" spellcheck="false" maxlength="10">
     </label>
