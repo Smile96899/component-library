@@ -1,5 +1,5 @@
 /* 独立复选框，支持 checked、disabled 与原生 indeterminate。 */
-.ui-checkbox { display:inline-flex; align-items:center; gap:10px; min-height:44px; font:inherit; color:inherit; cursor:pointer; }
+.ui-checkbox { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:44px; min-height:44px; font:inherit; color:inherit; cursor:pointer; }
 .ui-checkbox__control {
   appearance:none; -webkit-appearance:none; display:grid; place-content:center;
   box-sizing:border-box; flex-shrink:0; width:18px; height:18px; margin:0;

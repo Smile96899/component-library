@@ -1,6 +1,10 @@
 # 分页
 
-引入本目录 CSS 和 JS。data-total 是总条数，data-page-size 是每页条数，data-page 从 1 开始。监听 ui:page-change，event.detail 包含 page、pageSize、total、pages；业务方据此请求数据。修改 data-total 或 data-page-size 后调用 UiPagination.refresh(element)，页码会自动收敛到有效范围。动态插入新组件后调用 UiPagination.init(element)。refresh 不触发切页事件；当前页重复点击不触发事件。零条数据时显示禁用的第 1 页和前后按钮。
+引入本目录 CSS 和 JS。data-total 是总条数，data-page-size 是每页条数，data-page 从 1 开始。组件显示“共 X 页”，支持页码按钮、上一页/下一页，以及输入页码后点击“跳转”或按 Enter。
+
+页码必须为 1 到总页数之间的整数。空值、小数、负数或超过总页数会显示提示，不执行切页。零条数据时显示“共 0 页”，第 1 页、前后按钮和跳页输入均禁用。
+
+监听 ui:page-change，event.detail 包含 page、pageSize、total、pages；业务方据此请求数据。修改 data-total 或 data-page-size 后调用 UiPagination.refresh(element)，总页数同步更新，当前页码自动收敛到有效范围。动态插入新组件后调用 UiPagination.init(element)。refresh 不触发切页事件；跳转到当前页不触发事件。布局空间不足时自动换行。
 
 ## 引入
 

@@ -4,4 +4,14 @@
 .ui-pagination__button:focus-visible { outline:2px solid var(--ui-pagination-focus, #747b80); outline-offset:2px; }
 .ui-pagination__button:disabled { opacity:.4; cursor:not-allowed; }
 .ui-pagination__ellipsis { padding:0 2px; }
+.ui-pagination__total { white-space:nowrap; margin:0 4px; }
+.ui-pagination__jump { display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px; max-width:100%; }
+.ui-pagination__jump-label { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.ui-pagination__input { box-sizing:border-box; width:64px; min-width:0; height:32px; padding:0 8px; border:1px solid var(--ui-pagination-border, #c6ccd0); border-radius:9999px; background:var(--ui-pagination-bg, transparent); color:inherit; font:inherit; text-align:center; }
+.ui-pagination__input:focus-visible { outline:2px solid var(--ui-pagination-focus, #747b80); outline-offset:2px; }
+.ui-pagination__input:disabled { opacity:.4; cursor:not-allowed; }
+.ui-pagination__input[aria-invalid="true"] { border-style:dashed; }
+.ui-pagination__feedback { flex-basis:100%; font-size:12px; }
+.ui-pagination__feedback:empty { display:none; }
 @media(pointer:coarse) { .ui-pagination__button { min-width:44px; height:44px; } }
+@media(pointer:coarse) { .ui-pagination__input { height:44px; font-size:16px; } }

@@ -34,11 +34,11 @@
 
 ### 开关
 
-<img src="assets/toggle-switch.png" alt="开关" width="160">
+<img src="assets/toggle-switch.png" alt="开关" width="60">
 
 ### 复选框
 
-<img src="assets/checkbox.png" alt="复选框" width="160">
+<img src="assets/checkbox.png" alt="复选框" width="60">
 
 ### 确认弹窗
 

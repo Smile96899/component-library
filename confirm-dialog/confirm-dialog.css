@@ -1,7 +1,7 @@
 .ui-confirm-trigger, .ui-confirm__button { box-sizing:border-box; padding:9px 18px; min-height:40px; border:1px solid var(--ui-confirm-border, #adb4b9); border-radius:9999px; background:var(--ui-confirm-button-bg, transparent); color:var(--ui-confirm-color, inherit); font:inherit; cursor:pointer; }
 .ui-confirm-trigger:focus-visible, .ui-confirm__button:focus-visible { outline:2px solid var(--ui-confirm-focus, #747b80); outline-offset:3px; }
 .ui-confirm-trigger:disabled, .ui-confirm__button:disabled { opacity:.5; cursor:not-allowed; }
-.ui-confirm { box-sizing:border-box; width:360px; max-width:calc(100% - 32px); max-height:calc(100% - 32px); overflow:auto; padding:24px; border:1px solid var(--ui-confirm-border, #c6ccd0); border-radius:16px; background:var(--ui-confirm-bg, #fff); color:var(--ui-confirm-color, #272d31); font:inherit; }
+.ui-confirm { box-sizing:border-box; width:360px; max-width:calc(100% - 32px); max-height:calc(100% - 32px); overflow:auto; padding:24px; border:1px solid var(--ui-confirm-border, #c6ccd0); border-radius:0; background:var(--ui-confirm-bg, #fff); color:var(--ui-confirm-color, #272d31); font:inherit; }
 .ui-confirm::backdrop { background:var(--ui-confirm-backdrop, #0006); }
 .ui-confirm__title { margin:0 0 8px; font-size:18px; }
 .ui-confirm__description { margin:0; line-height:1.6; overflow-wrap:anywhere; }
