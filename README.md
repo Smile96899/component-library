@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制图标、导出图标、筛选图标、更多选项图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，其余组件只显示小图标，颜色可自行配置。
+按钮、搜索框、复制图标、导出图标、筛选图标、下拉选择框分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮、搜索框和下拉选择框为胶囊圆角，复制、导出与筛选显示小图标，颜色可自行配置。
 
 ## 样式预览
 
@@ -24,9 +24,9 @@
 
 <img src="assets/filter-button.png" alt="筛选图标" width="48">
 
-### 更多选项图标
+### 下拉选择框
 
-<img src="assets/options-button.png" alt="更多选项图标" width="48">
+<img src="assets/dropdown-select.png" alt="下拉选择框" width="196">
 
 ## 通用分布式部署
 
@@ -132,7 +132,7 @@
 
 ## 分别配置颜色
 
-更多选项组件说明见下方，各图标颜色可分别配置。
+下拉选择框用法见下方，各组件颜色可分别配置。
 
 直接引用时普通按钮默认绿色，复制图标默认灰绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
 
@@ -166,31 +166,44 @@
   --ui-focus: #5bd4b3;
 }
 
-/* 更多选项图标。 */
-.ui-options {
-  --ui-options-color: #617369;
-  --ui-options-hover: #007458;
-  --ui-focus: #5bd4b3;
+/* 下拉选择框。 */
+.ui-select {
+  --ui-select-color: #202823;
+  --ui-select-background: #fff;
+  --ui-select-border: #bdc9c3;
+  --ui-select-focus: #007458;
 }
 ```
 
 按钮和搜索框默认宽度为父容器的 100%，最小高度为 50px，圆角为 9999px，可分别设置 max-width。各图标保持紧凑尺寸，触屏设备上点击区域为 44 × 44px，图标本身仍为 18px。下载后打开各目录的 index.html 可独立预览，根目录 index.html 按一行一个组件展示。
 
-## 更多选项图标用法
+## 下拉选择框用法
 
-源码：[options-button/options-button.css](options-button/options-button.css) · 独立演示：[options-button/index.html](options-button/index.html)
+源码：[dropdown-select/dropdown-select.css](dropdown-select/dropdown-select.css) · 独立演示：[dropdown-select/index.html](dropdown-select/index.html)
 
-水平三个点（⋯），18px 图标、32 × 32px 点击区域，无文字、无背景、无边框。只需独立 CSS，不依赖其他组件。
+控件显示当前选项，点击展开多个选项，选中后自动更新显示。胶囊外框、右侧下箭头、内部无额外边框；默认宽 180px。原生 select 自带键盘选择、表单提交和移动端选项界面，不需要额外 JavaScript。
 
 ```html
-<link rel="stylesheet" href="options-button/options-button.css">
-<button class="ui-options" type="button" aria-label="更多选项">
-  <svg class="ui-options__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <circle cx="5" cy="12" r="1.8"/>
-    <circle cx="12" cy="12" r="1.8"/>
-    <circle cx="19" cy="12" r="1.8"/>
+<link rel="stylesheet" href="dropdown-select/dropdown-select.css">
+<div class="ui-select">
+  <select class="ui-select__control" id="status-select" name="status" aria-label="选择状态">
+    <option value="all">全部状态</option>
+    <option value="enabled">启用</option>
+    <option value="disabled">停用</option>
+    <option value="pending">待审核</option>
+  </select>
+  <svg class="ui-select__arrow" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+       stroke-linejoin="round" aria-hidden="true">
+    <path d="m6 9 6 6 6-6"/>
   </svg>
-</button>
+</div>
 ```
 
-接入时绑定项目自己的选项菜单，组件不预设菜单内容。独立演示仅反馈点击；实际绑定菜单时补充 `aria-haspopup="menu"`、`aria-controls` 和随开关状态更新的 `aria-expanded`。
+替换 option 的文字和值即可配置选项。设置 `selected` 指定默认项，给 select 加 `disabled` 可禁用。需要根据选择加载数据时监听 `change`，通过 `event.target.value` 读取选中值；它不会自动替业务列表执行筛选。展开菜单的外观由浏览器/系统提供。
+
+```js
+document.getElementById('status-select').addEventListener('change', event => {
+  console.log('选中值：', event.target.value);
+});
+```

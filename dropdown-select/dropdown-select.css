@@ -1,0 +1,41 @@
+/* 独立胶囊下拉选择框，使用原生 select 的菜单和键盘交互。 */
+.ui-select {
+  --ui-select-color: #202823;
+  --ui-select-background: #fff;
+  --ui-select-border: #bdc9c3;
+  --ui-select-focus: #007458;
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  width: 180px;
+  max-width: 100%;
+  border: 1px solid var(--ui-select-border);
+  border-radius: 9999px;
+  background: var(--ui-select-background);
+  color: var(--ui-select-color);
+  vertical-align: middle;
+}
+.ui-select:focus-within { border-color: var(--ui-select-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ui-select-focus) 15%, transparent); }
+.ui-select__control {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 38px 8px 16px;
+  border: 0;
+  border-radius: inherit;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.ui-select__control option { background: var(--ui-select-background); color: var(--ui-select-color); }
+.ui-select__control:disabled { opacity: .5; cursor: not-allowed; }
+.ui-select__arrow { position:absolute; right:14px; top:50%; transform:translateY(-50%); width:16px; height:16px; pointer-events:none; }
+@media (pointer: coarse) { .ui-select__control { min-height:44px; font-size:16px; } }
