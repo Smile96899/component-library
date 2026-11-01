@@ -50,10 +50,10 @@ render 可重复调用，替换当前数据；同一列表内 UID 必须非空�
 
 资金字段接收已经格式化的字符串，原样展示，不做浮点计算，也不预设货币或修改余额。时间字段同样按传入文本显示，时区和格式由业务层统一。手机号脱敏由业务侧处理。
 
-操作栏提供“查看”“编辑”，以及“更多”下的“登录记录”“资金记录”，点击只发出事件；此组件不自带账号接口、权限系统或资金操作。它只显示传入的当前页数据，搜索、分页和服务端授权由接入项目处理。
+操作栏采用无边框、透明背景的纯文字样式，提供“查看”“编辑”，以及“更多”下的“登录记录”“资金记录”，点击只发出事件；此组件不自带账号接口、权限系统或资金操作。它只显示传入的当前页数据，搜索、分页和服务端授权由接入项目处理。
 
 ## 样式配置
 
-覆盖 --ui-users-color / --ui-users-muted / --ui-users-border / --ui-users-bg / --ui-users-header-bg / --ui-users-button-border / --ui-users-button-bg / --ui-users-focus。默认不使用品牌色。
+覆盖 --ui-users-color / --ui-users-muted / --ui-users-border / --ui-users-bg / --ui-users-header-bg / --ui-users-action-color / --ui-users-focus。默认不使用品牌色。
 
 [独立演示](index.html)
