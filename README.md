@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，复制功能只显示一个小图标，颜色可自行配置。
+按钮、搜索框、复制图标、导出图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，复制与导出只显示小图标，颜色可自行配置。
 
 ## 样式预览
 
@@ -15,6 +15,10 @@
 ### 复制图标
 
 <img src="assets/copy-button.png" alt="复制图标" width="48">
+
+### 导出图标
+
+<img src="assets/export-button.png" alt="导出图标" width="48">
 
 ## 通用分布式部署
 
@@ -69,6 +73,36 @@
 
 成功后图标变为对勾，按钮下方提示“已复制”，3 秒后复原。空内容与失败会显示对应提示。优先使用 HTTPS/localhost 下的 Clipboard API，无该 API 时尝试兼容方式。
 
+## 导出图标用法
+
+源码：[export-button/export-button.css](export-button/export-button.css)、[export-button/export-button.js](export-button/export-button.js) · 独立演示：[export-button/index.html](export-button/index.html)
+
+与复制图标相同：18px 图标、32 × 32px 点击区域，无文字、无背景、无边框。触屏点击区域扩大到 44 × 44px。
+
+```html
+<link rel="stylesheet" href="export-button/export-button.css">
+<script src="export-button/export-button.js" defer></script>
+
+<button class="ui-export" type="button" data-ui-export
+        data-export-target="export-data" data-export-format="csv"
+        data-export-filename="数据列表" aria-label="导出数据">
+  <svg class="ui-export__icon" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+       stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3v12m-5-5 5 5 5-5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/>
+  </svg>
+</button>
+<script type="application/json" id="export-data">
+  [{"名称":"示例 A","状态":"启用"}]
+</script>
+```
+
+`data-export-target` 指向数据元素的 ID（不带 #）。点击时读取最新内容；更新数据可通过 `document.getElementById('export-data').textContent = JSON.stringify(rows)`。动态数据请使用 textContent，避免拼接不可信 HTML。
+
+`data-export-format` 可选 `csv`（默认）或 `json`，文件扩展名自动匹配。CSV 支持平面对象数组，自动处理中文 BOM、引号、逗号和换行；可能被表格软件当作公式的字符串会加单引号作为文本导出。嵌套结构使用 JSON。组件只导出当前传入的数据，不自动请求全部分页数据，也不生成 XLSX。
+
+下载在浏览器本地触发。提示“已开始下载”表示已发起下载，并不代表用户已经保存文件；空数据或格式错误时显示提示。可监听 `ui:export` 事件获取 `event.detail.filename` 和 `format`。
+
 ## 分别配置颜色
 
 直接引用时普通按钮默认绿色，复制图标默认灰绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
@@ -86,6 +120,13 @@
 .ui-copy {
   --ui-copy-color: #617369;
   --ui-copy-hover: #007458;
+  --ui-focus: #5bd4b3;
+}
+
+/* 导出图标。 */
+.ui-export {
+  --ui-export-color: #617369;
+  --ui-export-hover: #007458;
   --ui-focus: #5bd4b3;
 }
 ```

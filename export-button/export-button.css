@@ -1,0 +1,27 @@
+/* 独立导出图标，无背景、无边框。 */
+.ui-export {
+  --ui-export-color: #617369;
+  --ui-export-hover: #007458;
+  --ui-focus: #5bd4b3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ui-export-color);
+  font: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.ui-export:hover:not(:disabled) { color: var(--ui-export-hover); }
+.ui-export:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.ui-export:disabled { opacity: .5; cursor: not-allowed; }
+.ui-export__icon { width: 18px; height: 18px; flex-shrink: 0; }
+.ui-export-status { display: block; margin-top: 4px; font: inherit; color: #52645a; }
+.ui-export-status:empty { display: none; }
+@media (pointer: coarse) { .ui-export { width: 44px; height: 44px; } }

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>导出图标 · 组件库</title>
+  <link rel="stylesheet" href="export-button.css">
+  <script src="export-button.js" defer></script>
+  <style>
+    body { margin:0; color:#202823; background:#fff; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
+    main { max-width:540px; margin:0 auto; padding:32px 20px; }
+    h1 { font-size:24px; margin:0 0 24px; }
+    .preview { width:fit-content; padding:8px; }
+    p { color:#52645a; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>导出图标</h1>
+    <div class="preview">
+      <button class="ui-export" type="button" data-ui-export data-export-target="export-data" data-export-format="csv" data-export-filename="示例数据" aria-label="导出数据">
+        <svg class="ui-export__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
+      </button>
+    </div>
+    <p>点击图标下载两条示例数据，默认 CSV 格式。</p>
+    <script type="application/json" id="export-data">[{"名称":"示例 A","状态":"启用"},{"名称":"示例 B","状态":"停用"}]</script>
+  </main>
+</body>
+</html>
