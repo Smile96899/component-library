@@ -31,6 +31,9 @@
 <script src="file-upload/file-upload.js" defer></script>
 <link rel="stylesheet" href="loading/loading.css">
 <link rel="stylesheet" href="empty-state/empty-state.css">
+<link rel="stylesheet" href="user-table/user-table.css">
+<script src="user-table/user-table.js" defer></script>
+<script src="user-table/demo.js" defer></script>
 <style>body { margin:0; background:#fff; color:#202823; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
 main { max-width:540px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; } h2 { font-size:16px; margin:0 0 8px; }
@@ -135,6 +138,15 @@ a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件�
   <p class="ui-empty__title">暂无数据</p>
   <p class="ui-empty__description">有数据后会显示在这里</p>
 </div></div><a href="empty-state/index.html">单独预览</a></section>
+<section id="user-table" data-user-table-demo><h2>用户管理表格</h2><div class="preview" style="max-width:100%;box-sizing:border-box"><div class="ui-users" data-ui-users>
+  <div class="ui-users__scroll" role="region" aria-label="用户管理表格，可横向滚动" tabindex="0">
+    <table class="ui-users__table">
+      <caption>用户管理</caption>
+      <thead><tr><th scope="col">UID</th><th scope="col">姓名</th><th scope="col">邮箱或者手机号</th><th scope="col" class="ui-users__money">可用资金</th><th scope="col" class="ui-users__money">冻结资金</th><th scope="col">最后登录 IP / 时间</th><th scope="col">注册时间</th><th scope="col">操作</th></tr></thead>
+      <tbody><tr><td colspan="8" class="ui-users__empty">暂无用户</td></tr></tbody>
+    </table>
+  </div>
+</div></div><p data-user-demo-status role="status" style="font-size:12px">示例数据 · 操作入口可接入业务接口</p><a href="user-table/index.html">单独预览</a></section>
 </main><script>window.addEventListener('DOMContentLoaded', () => {
 
 

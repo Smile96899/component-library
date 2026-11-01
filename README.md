@@ -84,6 +84,10 @@
 
 <img src="assets/empty-state.png" alt="空状态" width="260">
 
+### 用户管理表格
+
+<img src="assets/user-table.png" alt="用户管理表格：UID、姓名、联系方式、资金、登录信息、注册时间和操作" width="960">
+
 ## 通用分布式部署
 
 独立部署工具：[通用分布式部署](deployment/README.md)。不同技术栈通过容器镜像和一份配置复用；数据库可选 PostgreSQL 高可用或 TiDB 分布式模式。详见该目录的接入条件与验证范围。
@@ -326,3 +330,9 @@ document.getElementById('status-select').addEventListener('change', event => {
 ### 空状态
 
 [源码与用法](empty-state/README.md) · [独立演示](empty-state/index.html)
+
+### 用户管理表格
+
+[源码与用法](user-table/README.md) · [独立演示](user-table/index.html)
+
+UID、姓名、邮箱或者手机号、可用资金、冻结资金、最后登录 IP / 时间、注册时间、操作；独立组件，操作通过事件接入项目。
