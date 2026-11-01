@@ -1,6 +1,6 @@
 # 确认弹窗
 
-弹窗面板采用直角，`border-radius: 0`。
+弹窗面板采用 16px 圆角，可通过 `--ui-confirm-radius` 调整。
 
 引入本目录 CSS 和 JS。点击 data-ui-confirm 指向的 dialog ID 打开，支持 Esc、取消和确认，默认焦点落在取消按钮，关闭后返回触发按钮。监听 dialog 的 ui:confirm 事件，仅在 event.detail.confirmed 为 true 时执行业务操作。也可调用 UiConfirm.open(dialog, opener)。不自动删除或提交业务数据。多个弹窗的 ID 和标题关联 ID 必须唯一。依赖支持原生 dialog.showModal() 的现代浏览器。
 
