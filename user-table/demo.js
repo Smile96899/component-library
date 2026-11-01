@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     "frozenFunds": "500.00",
     "lastLoginIp": "192.0.2.18",
     "lastLoginTime": "2026/11/02 09:32:16",
+    "registrationIp": "203.0.113.12",
     "registeredAt": "2026/10/18 14:20:08"
   },
   {
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     "frozenFunds": "0.00",
     "lastLoginIp": "198.51.100.26",
     "lastLoginTime": "2026/11/01 18:45:02",
+    "registrationIp": "198.51.100.42",
     "registeredAt": "2026/10/22 10:15:36"
   },
   {
@@ -32,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     "frozenFunds": "1,200.00",
     "lastLoginIp": null,
     "lastLoginTime": null,
+    "registrationIp": "192.0.2.35",
     "registeredAt": "2026/11/02 08:10:00"
   }
 ]);

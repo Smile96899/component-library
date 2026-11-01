@@ -2,9 +2,9 @@
 
 独立 CSS / JS，无框架或其他组件依赖。紧凑圆角表格，默认中性颜色；窄屏在表格内横向滚动。
 
-字段顺序：UID、姓名、邮箱或者手机号、可用资金、冻结资金、最后登录 IP / 时间、注册时间、操作。
+字段顺序：UID、姓名、邮箱或者手机号、可用资金、冻结资金、最后登录 IP / 时间、注册 IP / 时间、操作。
 
-邮箱与手机号共用一列，优先显示邮箱，没有邮箱时显示手机号。最后登录 IP 和时间在同一格内分两行。缺失值显示“—”，空列表显示“暂无用户”。
+邮箱与手机号共用一列，优先显示邮箱，没有邮箱时显示手机号。最后登录 IP 和时间、注册 IP 和时间分别在各自单元格内分两行。缺失值显示“—”，空列表显示“暂无用户”。
 
 ## 引入
 
@@ -15,7 +15,7 @@
   <div class="ui-users__scroll" role="region" aria-label="用户管理表格，可横向滚动" tabindex="0">
     <table class="ui-users__table">
       <caption>用户管理</caption>
-      <thead><tr><th scope="col">UID</th><th scope="col">姓名</th><th scope="col">邮箱或者手机号</th><th scope="col" class="ui-users__money">可用资金</th><th scope="col" class="ui-users__money">冻结资金</th><th scope="col">最后登录 IP / 时间</th><th scope="col">注册时间</th><th scope="col">操作</th></tr></thead>
+      <thead><tr><th scope="col">UID</th><th scope="col">姓名</th><th scope="col">邮箱或者手机号</th><th scope="col" class="ui-users__money">可用资金</th><th scope="col" class="ui-users__money">冻结资金</th><th scope="col">最后登录 IP / 时间</th><th scope="col">注册 IP / 时间</th><th scope="col">操作</th></tr></thead>
       <tbody><tr><td colspan="8" class="ui-users__empty">暂无用户</td></tr></tbody>
     </table>
   </div>
@@ -35,6 +35,7 @@ UiUserTable.render(table, [{
   frozenFunds: '500.00',
   lastLoginIp: '192.0.2.18',
   lastLoginTime: '2026/11/02 09:32:16',
+  registrationIp: '203.0.113.12',
   registeredAt: '2026/10/18 14:20:08'
 }]);
 

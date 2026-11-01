@@ -45,7 +45,8 @@
       cell(user.availableFunds, 'ui-users__money'); cell(user.frozenFunds, 'ui-users__money');
       const login = cell(user.lastLoginIp, 'ui-users__mono');
       const time = document.createElement('span'); time.className = 'ui-users__secondary'; time.textContent = display(user.lastLoginTime); login.append(time);
-      cell(user.registeredAt, 'ui-users__mono');
+      const registration = cell(user.registrationIp, 'ui-users__mono');
+      const registeredTime = document.createElement('span'); registeredTime.className = 'ui-users__secondary'; registeredTime.textContent = display(user.registeredAt); registration.append(registeredTime);
       const actions = cell(''); actions.textContent = '';
       const group = document.createElement('div'); group.className = 'ui-users__actions';
       for (const [action, label] of [['view','查看'],['edit','编辑']]) {
