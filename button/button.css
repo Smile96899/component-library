@@ -1,8 +1,10 @@
 /* 独立胶囊按钮 */
 .ui-pill-button {
-  --ui-accent: #007458;
-  --ui-accent-hover: #005f48;
-  --ui-focus: #5bd4b3;
+  --ui-accent: transparent;
+  --ui-accent-hover: transparent;
+  --ui-button-color: inherit;
+  --ui-button-border: currentColor;
+  --ui-focus: currentColor;
   --ui-radius: 9999px;
   box-sizing: border-box;
   width: 100%;
@@ -17,9 +19,9 @@
   justify-content: center;
   gap: 6px;
   padding: 12px 24px;
-  border: 0;
+  border: 1px solid var(--ui-button-border);
   background: var(--ui-accent);
-  color: #fff;
+  color: var(--ui-button-color);
   font-weight: 700;
   line-height: 1.4;
   text-decoration: none;

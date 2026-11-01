@@ -44,7 +44,7 @@
 <button class="ui-pill-button" type="button" aria-label="申请配置"><span aria-hidden="true">↗</span></button>
 ```
 
-只保留箭头，不显示文字。接入项目时把 `aria-label` 改成实际操作名称，并绑定所需操作。
+只保留箭头，不显示文字。默认透明背景，箭头与细描边继承页面文字颜色，不预设品牌配色；悬停也保持透明。接入项目时把 `aria-label` 改成实际操作名称，并绑定所需操作。
 
 ## 搜索框用法
 
@@ -134,15 +134,16 @@
 
 下拉选择框用法见下方，各组件颜色可分别配置。
 
-直接引用时普通按钮默认绿色，复制图标默认灰绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
+普通按钮默认透明背景、继承页面文字颜色，后续自行配色。以下是可选配色示例，放在组件 CSS 后面即可生效；不添加时保持默认透明样式。各组件分别修改，互不影响：
 
 ```css
 /* 普通按钮。 */
 .ui-pill-button {
   --ui-accent: #2563eb;
   --ui-accent-hover: #1d4ed8;
+  --ui-button-color: #fff;
+  --ui-button-border: transparent;
   --ui-focus: #93c5fd;
-  color: #fff;
 }
 
 /* 复制图标。 */
