@@ -1,0 +1,89 @@
+/* 组件库：胶囊按钮与无内框搜索框。无需框架。 */
+.ui-pill-button,
+.ui-search {
+  --ui-accent: #007458;
+  --ui-accent-hover: #005f48;
+  --ui-focus: #5bd4b3;
+  --ui-radius: 9999px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  border-radius: var(--ui-radius);
+  font: inherit;
+}
+
+.ui-pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 0;
+  background: var(--ui-accent);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.ui-pill-button:hover:not(:disabled) { background: var(--ui-accent-hover); }
+.ui-pill-button:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
+.ui-pill-button:disabled { opacity: .5; cursor: not-allowed; }
+
+.ui-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 1px solid #bdc9c3;
+  background: #fff;
+  color: #202823;
+}
+/* 焦点提示只显示在外层容器。内部 input 始终无框。 */
+.ui-search:focus-within {
+  border-color: var(--ui-accent);
+  box-shadow: 0 0 0 3px #00745820;
+}
+.ui-search__icon { flex-shrink: 0; width: 18px; height: 18px; color: #617369; }
+.ui-search .ui-search__input,
+.ui-search .ui-search__input:focus,
+.ui-search .ui-search__input:focus-visible {
+  flex: 1;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ui-search__input::placeholder { color: #65766c; opacity: 1; }
+.ui-search__clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-right: -12px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #617369;
+  font: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+.ui-search__clear[hidden] { display: none; }
+.ui-search__clear:hover { color: var(--ui-accent); background: #0074580d; }
+.ui-search__clear:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -4px; }
+@media (prefers-reduced-motion: reduce) {
+  .ui-pill-button { transition: none; }
+}

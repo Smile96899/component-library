@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>组件库 · 胶囊按钮与搜索框</title>
+  <link rel="stylesheet" href="components.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f8f6; color: #202823; font: 14px/1.6 system-ui, "Microsoft YaHei", sans-serif; }
+    main { max-width: 860px; margin: 0 auto; padding: 48px 24px; }
+    h1 { margin: 0 0 8px; font-size: 30px; }
+    h2 { margin: 0 0 20px; font-size: 20px; }
+    p { color: #52645a; }
+    section { margin-top: 28px; padding: 28px; border: 1px solid #dce5df; border-radius: 16px; background: #fff; }
+    .demo { max-width: 388px; }
+    .demo-label { display: block; margin: 20px 0 8px; font-weight: 600; }
+    .notice { min-height: 24px; margin-bottom: 0; overflow-wrap: anywhere; }
+    .comparison { display: grid; gap: 20px; }
+    .row { display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+    code { font-family: Consolas, monospace; }
+    @media(max-width: 640px) {
+      main { padding: 28px 16px; }
+      section { padding: 20px; }
+      .row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    }
+  </style>
+  <script src="components.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>组件库</h1>
+  <p>胶囊式圆角按钮与搜索框。输入区无内框，聚焦时只高亮外层轮廓。</p>
+  <section aria-labelledby="capsule-title">
+    <h2 id="capsule-title">胶囊组件</h2>
+    <div class="demo">
+      <button class="ui-pill-button" type="button" id="apply-button">申请配置 <span aria-hidden="true">↗</span></button>
+      <form id="search-demo" role="search">
+        <label class="demo-label" for="keyword">搜索</label>
+        <div class="ui-search" data-ui-search>
+          <svg class="ui-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+          <input id="keyword" class="ui-search__input" type="text" inputmode="search" enterkeyhint="search" name="q" placeholder="搜索关键词…">
+          <button class="ui-search__clear" type="button" aria-label="清除搜索词" hidden>×</button>
+        </div>
+      </form>
+    </div>
+    <p class="notice" id="demo-status" role="status">输入后按 Enter 可体验搜索提交。</p>
+  </section>
+  <section aria-labelledby="radius-title">
+    <h2 id="radius-title">圆角对比</h2>
+    <div class="comparison" id="comparison"></div>
+  </section>
+</main>
+<script>
+  const comparison = document.getElementById('comparison');
+  const variants = [['直角', '0'], ['微圆角', '4px'], ['小圆角', '6px'], ['柔和圆角', '8px'], ['胶囊圆角', '9999px']];
+  for (const [label, radius] of variants) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const name = document.createElement('div');
+    name.textContent = label + ' · ' + radius;
+    const button = document.createElement('button');
+    button.className = 'ui-pill-button';
+    button.type = 'button';
+    button.textContent = '申请配置 ↗';
+    button.style.setProperty('--ui-radius', radius);
+    button.addEventListener('click', () => {
+      document.getElementById('demo-status').textContent = label + '按钮已点击（演示）。';
+    });
+    const field = document.createElement('div');
+    field.className = 'ui-search';
+    field.style.setProperty('--ui-radius', radius);
+    const input = document.createElement('input');
+    input.className = 'ui-search__input';
+    input.type = 'text';
+    input.placeholder = '搜索关键词…';
+    input.setAttribute('aria-label', label + '搜索框');
+    field.append(input);
+    row.append(name, button, field);
+    comparison.append(row);
+  }
+  document.getElementById('apply-button').addEventListener('click', () => {
+    document.getElementById('demo-status').textContent = '胶囊按钮已点击（演示）。';
+  });
+  document.getElementById('search-demo').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = document.getElementById('keyword').value.trim();
+    document.getElementById('demo-status').textContent = query ? '搜索演示：' + query : '请先输入搜索关键词。';
+  });
+</script>
+</body>
+</html>
