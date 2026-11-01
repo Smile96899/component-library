@@ -2,6 +2,84 @@
 
 原生 HTML / CSS / JavaScript 组件，无框架、无构建步骤、无外部依赖。下载后直接打开 `index.html` 预览。
 
+## 样式预览
+
+### 默认状态
+
+![胶囊圆角按钮和搜索框](assets/capsule-preview.png)
+
+### 点击输入后的状态
+
+搜索框内部没有额外边框，只有外层轮廓高亮。
+
+![搜索框聚焦状态：内部无框，外层高亮](assets/capsule-focus.png)
+
+## 核心 CSS 样式
+
+以下为样式要点，完整可复用样式见 [components.css](components.css)。
+
+```css
+/* 两端完全圆角。 */
+.ui-pill-button,
+.ui-search {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 9999px;
+}
+
+/* 胶囊按钮。 */
+.ui-pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 0;
+  background: #007458;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 搜索框外层。 */
+.ui-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 1px solid #bdc9c3;
+  background: #fff;
+}
+
+/* 输入区域始终无内框，包括点击和键盘聚焦时。 */
+.ui-search .ui-search__input,
+.ui-search .ui-search__input:focus,
+.ui-search .ui-search__input:focus-visible {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+}
+
+/* 聚焦提示统一显示在外层。 */
+.ui-search:focus-within {
+  border-color: #007458;
+  box-shadow: 0 0 0 3px #00745820;
+}
+
+.ui-pill-button:focus-visible {
+  outline: 3px solid #5bd4b3;
+  outline-offset: 3px;
+}
+```
+
 ## 包含内容
 
 - 胶囊按钮：绿色主按钮、箭头、悬停、键盘焦点、禁用样式。
