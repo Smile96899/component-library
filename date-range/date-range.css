@@ -1,0 +1,14 @@
+/* 独立手动日期范围输入，不使用日期选择器。 */
+.ui-date-range { width:100%; max-width:420px; color:var(--ui-date-color, inherit); font:inherit; }
+.ui-date-range__row { display:flex; align-items:flex-end; gap:8px; }
+.ui-date-range__field { display:flex; flex:1; min-width:0; flex-direction:column; gap:6px; }
+.ui-date-range__label { font-size:12px; }
+.ui-date-range__input { box-sizing:border-box; width:100%; min-width:0; min-height:44px; padding:10px 12px; border:1px solid var(--ui-date-border, #b9bfc3); border-radius:9999px; background:var(--ui-date-bg, transparent); color:inherit; font:inherit; line-height:1.5; font-variant-numeric:tabular-nums; }
+.ui-date-range__input::placeholder { color:var(--ui-date-placeholder, #747b80); opacity:1; }
+.ui-date-range__input:focus { outline:none; border-color:var(--ui-date-focus, #42484c); box-shadow:0 0 0 2px color-mix(in srgb, var(--ui-date-focus, #42484c) 14%, transparent); }
+.ui-date-range__input[aria-invalid="true"] { border-style:dashed; }
+.ui-date-range__input:disabled { opacity:.5; cursor:not-allowed; }
+.ui-date-range__separator { display:flex; align-items:center; min-height:44px; flex-shrink:0; }
+.ui-date-range__error { margin:6px 0 0; font-size:12px; line-height:1.5; }
+.ui-date-range__error:empty { display:none; }
+@media(pointer:coarse) { .ui-date-range__input { font-size:16px; padding-inline:10px; } }

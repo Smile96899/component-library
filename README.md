@@ -52,6 +52,10 @@
 
 <img src="assets/pagination.png" alt="分页：页码、总页数与跳转同一行" width="420">
 
+### 手动日期范围
+
+<img src="assets/date-range.png" alt="手动输入开始日期和结束日期" width="320">
+
 ## 通用分布式部署
 
 独立部署工具：[通用分布式部署](deployment/README.md)。不同技术栈通过容器镜像和一份配置复用；数据库可选 PostgreSQL 高可用或 TiDB 分布式模式。详见该目录的接入条件与验证范围。
@@ -260,3 +264,9 @@ document.getElementById('status-select').addEventListener('change', event => {
 ### 分页
 
 [源码与用法](pagination/README.md) · [独立演示](pagination/index.html)
+
+### 手动日期范围
+
+[源码与用法](date-range/README.md) · [独立演示](date-range/index.html)
+
+开始日期、结束日期均手动输入年月日，不弹出日历。支持标准格式和八位数字输入，校验闰年、真实日期及范围顺序。
