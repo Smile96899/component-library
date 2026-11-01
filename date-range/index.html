@@ -19,15 +19,15 @@
     <div class="preview">
       <div class="ui-date-range" data-ui-date-range>
         <div class="ui-date-range__row">
-          <label class="ui-date-range__field"><span class="ui-date-range__label">开始日期</span><input class="ui-date-range__input" type="text" name="start_date" data-date-start placeholder="YYYY-MM-DD" value="2026-11-01" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="10"></label>
+          <label class="ui-date-range__field"><input class="ui-date-range__input" type="text" name="start_date" aria-label="开始日期" data-date-start placeholder="/ /" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="10"></label>
           <span class="ui-date-range__separator" aria-hidden="true">至</span>
-          <label class="ui-date-range__field"><span class="ui-date-range__label">结束日期</span><input class="ui-date-range__input" type="text" name="end_date" data-date-end placeholder="YYYY-MM-DD" value="2026-11-30" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="10"></label>
+          <label class="ui-date-range__field"><input class="ui-date-range__input" type="text" name="end_date" aria-label="结束日期" data-date-end placeholder="/ /" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="10"></label>
         </div>
         <p class="ui-date-range__error" role="status"></p>
       </div>
     </div>
   </form>
-  <p class="demo-status">手动输入 YYYY-MM-DD 或 YYYYMMDD，离开输入框后自动整理格式。</p>
+  <p class="demo-status">手动输入 YYYY/MM/DD 或 YYYYMMDD，离开输入框后自动整理格式。</p>
 </main>
 <script>document.getElementById('date-demo').addEventListener('submit', event => event.preventDefault());</script>
 </body></html>

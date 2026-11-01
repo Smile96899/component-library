@@ -36,7 +36,7 @@
       input.setCustomValidity(error);
       if (showErrors && error) input.setAttribute('aria-invalid','true');
       else input.removeAttribute('aria-invalid');
-      if (normalize && value) input.value = value;
+      if (normalize && value) input.value = value.replaceAll('-', '/');
     }
     const feedback = element.querySelector('.ui-date-range__error');
     if (feedback) feedback.textContent = showErrors ? [state.startError,state.endError].filter(Boolean).join('；') : '';
