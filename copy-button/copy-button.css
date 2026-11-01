@@ -1,13 +1,12 @@
-/* 独立复制按钮，无需加载普通按钮样式 */
+/* 独立复制图标，无背景、无边框，不占整行。 */
 .ui-copy {
-  --ui-accent: #007458;
-  --ui-accent-hover: #005f48;
+  --ui-copy-color: #617369;
+  --ui-copy-hover: #007458;
   --ui-focus: #5bd4b3;
-  --ui-radius: 9999px;
   box-sizing: border-box;
-  width: 100%;
-  min-height: 50px;
-  border-radius: var(--ui-radius);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   font: inherit;
 }
 
@@ -15,22 +14,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 12px 24px;
+  padding: 7px;
   border: 0;
-  background: var(--ui-accent);
-  color: #fff;
+  background: transparent;
+  color: var(--ui-copy-color);
   font-weight: 700;
   line-height: 1.4;
   text-decoration: none;
   cursor: pointer;
   transition: background-color .2s;
 }
-.ui-copy:hover:not(:disabled) { background: var(--ui-accent-hover); }
+.ui-copy:hover:not(:disabled) { color: var(--ui-copy-hover); }
 .ui-copy:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
 .ui-copy:disabled { opacity: .5; cursor: not-allowed; }
-.ui-copy__icon { width: 20px; height: 20px; flex-shrink: 0; }
+.ui-copy__icon { width: 18px; height: 18px; flex-shrink: 0; }
 .ui-copy__done { display: none; }
 .ui-copy[data-copy-state="success"] .ui-copy__idle { display: none; }
 .ui-copy[data-copy-state="success"] .ui-copy__done { display: block; }
-.ui-copy-status { display: block; min-height: 1.5em; margin-top: 8px; font: inherit; color: #52645a; }@media (prefers-reduced-motion: reduce) { .ui-copy { transition: none; } }
+.ui-copy-status { display: block; margin-top: 4px; font: inherit; color: #52645a; }
+.ui-copy-status:empty { display: none; }
+@media (pointer: coarse) { .ui-copy { width: 44px; height: 44px; } }
+@media (prefers-reduced-motion: reduce) { .ui-copy { transition: none; } }

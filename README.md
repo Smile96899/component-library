@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制按钮分别存放，互不依赖；每个组件都能单独引入、单独预览。默认胶囊圆角，按钮无可见文字，颜色可自行配置。
+按钮、搜索框、复制图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，复制功能只显示一个小图标，颜色可自行配置。
 
 ## 样式预览
 
@@ -12,9 +12,9 @@
 
 <img src="assets/search.png" alt="搜索框" width="280">
 
-### 复制按钮
+### 复制图标
 
-<img src="assets/copy-button.png" alt="复制按钮" width="280">
+<img src="assets/copy-button.png" alt="复制图标" width="48">
 
 ## 按钮用法
 
@@ -45,11 +45,11 @@
 
 内部输入区无边框，点击或键盘聚焦时只高亮外层。JavaScript 提供清除功能；实际搜索逻辑由接入项目实现。
 
-## 复制按钮用法
+## 复制图标用法
 
 源码：[copy-button/copy-button.css](copy-button/copy-button.css)、[copy-button/copy-button.js](copy-button/copy-button.js) · 独立演示：[copy-button/index.html](copy-button/index.html)
 
-只引入复制按钮自己的文件，不需要普通按钮或搜索框。
+只引入复制图标自己的文件，不需要普通按钮或搜索框。图标为 18px，无背景、无边框，默认点击区域为 32 × 32px，不占整行。
 
 ```html
 <link rel="stylesheet" href="copy-button/copy-button.css">
@@ -66,7 +66,7 @@
 
 ## 分别配置颜色
 
-直接引用时两个按钮默认都是绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
+直接引用时普通按钮默认绿色，复制图标默认灰绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
 
 ```css
 /* 普通按钮。 */
@@ -77,13 +77,12 @@
   color: #fff;
 }
 
-/* 复制按钮。 */
+/* 复制图标。 */
 .ui-copy {
-  --ui-accent: #007458;
-  --ui-accent-hover: #005f48;
+  --ui-copy-color: #617369;
+  --ui-copy-hover: #007458;
   --ui-focus: #5bd4b3;
-  color: #fff;
 }
 ```
 
-所有组件默认宽度为父容器的 100%，最小高度为 50px，圆角为 9999px。可分别设置 max-width。下载后打开各目录的 index.html 可独立预览，根目录 index.html 按一行一个组件展示。
+按钮和搜索框默认宽度为父容器的 100%，最小高度为 50px，圆角为 9999px，可分别设置 max-width。复制图标保持紧凑尺寸，触屏设备上点击区域为 44 × 44px，图标本身仍为 18px。下载后打开各目录的 index.html 可独立预览，根目录 index.html 按一行一个组件展示。
