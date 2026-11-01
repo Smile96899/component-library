@@ -1,0 +1,25 @@
+/* 独立更多选项图标，与复制、导出、筛选图标保持相同尺寸。 */
+.ui-options {
+  --ui-options-color: #617369;
+  --ui-options-hover: #007458;
+  --ui-focus: #5bd4b3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ui-options-color);
+  font: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.ui-options:hover:not(:disabled) { color: var(--ui-options-hover); }
+.ui-options:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.ui-options:disabled { opacity: .5; cursor: not-allowed; }
+.ui-options__icon { width: 18px; height: 18px; flex-shrink: 0; }
+@media (pointer: coarse) { .ui-options { width: 44px; height: 44px; } }

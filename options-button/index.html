@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>更多选项图标 · 组件库</title>
+  <link rel="stylesheet" href="options-button.css">
+  <style>
+    body { margin:0; color:#202823; background:#fff; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
+    main { max-width:540px; margin:0 auto; padding:32px 20px; }
+    h1 { font-size:24px; margin:0 0 24px; }
+    .preview { width:fit-content; padding:8px; }
+    .status { color:#52645a; min-height:1.6em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>更多选项图标</h1>
+    <div class="preview">
+      <button class="ui-options" type="button" aria-label="更多选项" id="options-demo">
+        <svg class="ui-options__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
+      </button>
+    </div>
+    <p class="status" id="options-status" role="status"></p>
+  </main>
+  <script>
+    document.getElementById('options-demo').addEventListener('click', () => {
+      document.getElementById('options-status').textContent = '更多选项按钮已点击（演示）';
+    });
+  </script>
+</body>
+</html>
