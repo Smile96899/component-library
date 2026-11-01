@@ -34,6 +34,8 @@
 <link rel="stylesheet" href="user-table/user-table.css">
 <script src="user-table/user-table.js" defer></script>
 <script src="user-table/demo.js" defer></script>
+<link rel="stylesheet" href="password-input/password-input.css">
+<script src="password-input/password-input.js" defer></script>
 <style>body { margin:0; background:#fff; color:#202823; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
 main { max-width:540px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; } h2 { font-size:16px; margin:0 0 8px; }
@@ -147,6 +149,17 @@ a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件�
     </table>
   </div>
 </div></div><p data-user-demo-status role="status" style="font-size:12px">示例数据 · 操作入口可接入业务接口</p><a href="user-table/index.html">单独预览</a></section>
+<section id="password-input"><h2>密码规则输入框</h2><div class="preview"><div class="ui-password" data-ui-password>
+  <input class="ui-password__input" data-password-input type="password" name="password" aria-label="设置密码" autocomplete="new-password" autocapitalize="none" spellcheck="false" required>
+  <ul class="ui-password__rules" data-password-rules aria-label="密码要求">
+    <li data-password-rule="length" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少 8 位</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="uppercase" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个大写字母</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="lowercase" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个小写字母</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="number" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个数字</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="special" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个特殊字符</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+  </ul>
+  <span class="ui-password__sr" data-password-status role="status" aria-live="polite" aria-atomic="true"></span>
+</div></div><a href="password-input/index.html">单独预览</a></section>
 </main><script>window.addEventListener('DOMContentLoaded', () => {
 
 

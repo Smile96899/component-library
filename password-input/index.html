@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>密码规则输入框 · 组件库</title>
+<link rel="stylesheet" href="password-input.css"><script src="password-input.js" defer></script>
+<style>body{margin:0;background:#fff;color:#272d31;font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif}main{max-width:540px;margin:0 auto;padding:32px 20px}h1{font-size:24px;margin:0 0 24px}.preview{box-sizing:border-box;width:404px;max-width:100%;padding:8px}</style></head>
+<body><main><h1>密码规则输入框</h1><form id="password-demo"><div class="preview"><div class="ui-password" data-ui-password>
+  <input class="ui-password__input" data-password-input type="password" name="password" aria-label="设置密码" autocomplete="new-password" autocapitalize="none" spellcheck="false" required>
+  <ul class="ui-password__rules" data-password-rules aria-label="密码要求">
+    <li data-password-rule="length" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少 8 位</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="uppercase" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个大写字母</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="lowercase" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个小写字母</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="number" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个数字</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+    <li data-password-rule="special" data-passed="false"><span class="ui-password__mark" aria-hidden="true">×</span><span>至少一个特殊字符</span><span class="ui-password__sr" data-rule-status>（未满足）</span></li>
+  </ul>
+  <span class="ui-password__sr" data-password-status role="status" aria-live="polite" aria-atomic="true"></span>
+</div></div></form></main><script>document.getElementById('password-demo').addEventListener('submit', event => event.preventDefault());</script></body></html>

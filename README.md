@@ -88,6 +88,10 @@
 
 <img src="assets/user-table.png" alt="用户管理表格：UID、姓名、联系方式、资金、登录信息、注册 IP / 时间和操作" width="960">
 
+### 密码规则输入框
+
+<img src="assets/password-input.png" alt="密码框与五项实时规则校验" width="320">
+
 ## 通用分布式部署
 
 独立部署工具：[通用分布式部署](deployment/README.md)。不同技术栈通过容器镜像和一份配置复用；数据库可选 PostgreSQL 高可用或 TiDB 分布式模式。详见该目录的接入条件与验证范围。
@@ -336,3 +340,9 @@ document.getElementById('status-select').addEventListener('change', event => {
 [源码与用法](user-table/README.md) · [独立演示](user-table/index.html)
 
 UID、姓名、邮箱或者手机号、可用资金、冻结资金、最后登录 IP / 时间、注册 IP / 时间、操作；独立组件，操作通过事件接入项目。
+
+### 密码规则输入框
+
+[源码与用法](password-input/README.md) · [独立演示](password-input/index.html)
+
+圆角密码输入框，实时校验长度、大写字母、小写字母、数字和特殊字符；规则面板分别显示通过或未通过状态。
