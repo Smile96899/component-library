@@ -1,0 +1,36 @@
+/* 独立复制按钮，无需加载普通按钮样式 */
+.ui-copy {
+  --ui-accent: #007458;
+  --ui-accent-hover: #005f48;
+  --ui-focus: #5bd4b3;
+  --ui-radius: 9999px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  border-radius: var(--ui-radius);
+  font: inherit;
+}
+
+.ui-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 0;
+  background: var(--ui-accent);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.ui-copy:hover:not(:disabled) { background: var(--ui-accent-hover); }
+.ui-copy:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
+.ui-copy:disabled { opacity: .5; cursor: not-allowed; }
+.ui-copy__icon { width: 20px; height: 20px; flex-shrink: 0; }
+.ui-copy__done { display: none; }
+.ui-copy[data-copy-state="success"] .ui-copy__idle { display: none; }
+.ui-copy[data-copy-state="success"] .ui-copy__done { display: block; }
+.ui-copy-status { display: block; min-height: 1.5em; margin-top: 8px; font: inherit; color: #52645a; }@media (prefers-reduced-motion: reduce) { .ui-copy { transition: none; } }

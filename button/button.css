@@ -1,0 +1,32 @@
+/* 独立胶囊按钮 */
+.ui-pill-button {
+  --ui-accent: #007458;
+  --ui-accent-hover: #005f48;
+  --ui-focus: #5bd4b3;
+  --ui-radius: 9999px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  border-radius: var(--ui-radius);
+  font: inherit;
+}
+
+.ui-pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border: 0;
+  background: var(--ui-accent);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.ui-pill-button:hover:not(:disabled) { background: var(--ui-accent-hover); }
+.ui-pill-button:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
+.ui-pill-button:disabled { opacity: .5; cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .ui-pill-button { transition: none; } }
