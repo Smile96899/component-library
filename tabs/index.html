@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>标签页 · 组件库</title>
+<link rel="stylesheet" href="tabs.css">
+<script src="tabs.js" defer></script>
+<style>body { margin:0; background:#fff; color:#272d31; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; } main { max-width:540px; margin:0 auto; padding:32px 20px; } h1 { font-size:24px; margin:0 0 24px; } .preview { box-sizing:border-box; width:300px; max-width:100%; padding:8px; }</style></head>
+<body><main><h1>标签页</h1><div class="preview"><div class="ui-tabs" data-ui-tabs>
+  <div class="ui-tabs__list" role="tablist" aria-label="内容分类">
+    <button type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概览</button>
+    <button type="button" role="tab" id="tab-details" aria-controls="panel-details" aria-selected="false" tabindex="-1">详情</button>
+    <button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1">记录</button>
+  </div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" tabindex="0">概览内容</div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-details" aria-labelledby="tab-details" tabindex="0" hidden>详情内容</div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-records" aria-labelledby="tab-records" tabindex="0" hidden>记录内容</div>
+</div></div></main></body></html>

@@ -1,0 +1,11 @@
+.ui-table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--ui-table-border, #d4d8db); border-radius:14px; color:var(--ui-table-color, inherit); }
+.ui-table-wrap:focus-visible { outline:2px solid var(--ui-table-focus, #747b80); outline-offset:2px; }
+.ui-table { width:100%; min-width:300px; border-collapse:collapse; font:inherit; background:var(--ui-table-bg, transparent); }
+.ui-table caption { text-align:left; padding:10px 12px; font-weight:600; }
+.ui-table th, .ui-table td { padding:8px 12px; text-align:left; white-space:nowrap; border-top:1px solid var(--ui-table-border, #d4d8db); }
+.ui-table th { background:var(--ui-table-header-bg, #f5f6f7); font-weight:500; }
+.ui-table th:first-child, .ui-table td:first-child { width:20px; }
+.ui-table button { display:inline-flex; gap:6px; align-items:center; border:0; padding:4px 0; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.ui-table input { width:16px; height:16px; margin:0; vertical-align:middle; accent-color:var(--ui-table-active, #444b50); }
+.ui-table :is(input,button):focus-visible { outline:2px solid var(--ui-table-focus, #747b80); outline-offset:3px; }
+.ui-table tbody tr:has(input:checked) { background:var(--ui-table-selected-bg, #f3f4f5); }

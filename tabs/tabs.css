@@ -1,0 +1,8 @@
+.ui-tabs { max-width:360px; font:inherit; color:var(--ui-tabs-color, inherit); }
+.ui-tabs__list { display:flex; gap:4px; padding:4px; border:1px solid var(--ui-tabs-border, #c6ccd0); border-radius:9999px; overflow-x:auto; }
+.ui-tabs__list button { flex:1; flex-shrink:0; white-space:nowrap; min-height:36px; padding:6px 14px; border:0; border-radius:9999px; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.ui-tabs__list button[aria-selected="true"] { background:var(--ui-tabs-active-bg, #eef0f2); color:var(--ui-tabs-active-color, inherit); }
+.ui-tabs__list button:focus-visible, .ui-tabs__panel:focus-visible { outline:2px solid var(--ui-tabs-focus, #747b80); outline-offset:-2px; }
+.ui-tabs__list button:disabled { opacity:.45; cursor:not-allowed; }
+.ui-tabs__panel { margin-top:12px; padding:8px 4px; border-radius:8px; }
+.ui-tabs__panel[hidden] { display:none; }

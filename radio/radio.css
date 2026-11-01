@@ -1,0 +1,6 @@
+.ui-radio-group { display:flex; flex-wrap:wrap; gap:4px; color:var(--ui-radio-color, inherit); }
+.ui-radio { display:inline-flex; justify-content:center; align-items:center; min-width:44px; min-height:44px; cursor:pointer; }
+.ui-radio input { appearance:none; box-sizing:border-box; width:18px; height:18px; margin:0; border:1px solid var(--ui-radio-border, #8c949a); border-radius:50%; background:var(--ui-radio-bg, transparent); display:grid; place-content:center; cursor:inherit; color:inherit; }
+.ui-radio input:checked::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--ui-radio-active, currentColor); }
+.ui-radio input:focus-visible { outline:2px solid var(--ui-radio-focus, #747b80); outline-offset:3px; }
+.ui-radio input:disabled { opacity:.45; cursor:not-allowed; }

@@ -1,0 +1,9 @@
+.ui-multi { position:relative; width:220px; max-width:100%; color:var(--ui-multi-color, inherit); font:inherit; }
+.ui-multi__trigger { box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:40px; padding:8px 14px; border:1px solid var(--ui-multi-border, #adb4b9); border-radius:9999px; background:var(--ui-multi-bg, transparent); cursor:pointer; list-style:none; }
+.ui-multi__trigger::-webkit-details-marker { display:none; }
+.ui-multi__trigger:focus-visible { outline:2px solid var(--ui-multi-focus, #747b80); outline-offset:3px; }
+.ui-multi__panel { position:relative; box-sizing:border-box; margin-top:6px; padding:6px; max-height:240px; overflow:auto; border:1px solid var(--ui-multi-border, #adb4b9); border-radius:14px; background:var(--ui-multi-panel-bg, #fff); }
+.ui-multi__panel label { display:flex; align-items:center; gap:10px; min-height:40px; padding:0 8px; border-radius:8px; cursor:pointer; }
+.ui-multi__panel label:focus-within { outline:1px solid var(--ui-multi-focus, #747b80); outline-offset:-1px; }
+.ui-multi__panel input { width:16px; height:16px; margin:0; accent-color:var(--ui-multi-active, #444b50); }
+.ui-multi__panel label:has(input:disabled) { opacity:.45; cursor:not-allowed; }

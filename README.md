@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制图标、导出图标、筛选图标、下拉选择框分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮、搜索框和下拉选择框为胶囊圆角，复制、导出与筛选显示小图标，颜色可自行配置。另包含输入框、开关、复选框、确认弹窗、消息提示和分页。
+按钮、搜索框、复制图标、导出图标、筛选图标、下拉选择框分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮、搜索框和下拉选择框为胶囊圆角，复制、导出与筛选显示小图标，颜色可自行配置。另包含输入框、开关、复选框、确认弹窗、消息提示、分页、日期范围、单选框、多选下拉框、标签页、表格、文件上传、加载提示和空状态。
 
 ## 样式预览
 
@@ -55,6 +55,34 @@
 ### 手动日期范围
 
 <img src="assets/date-range.png" alt="手动输入开始日期和结束日期" width="320">
+
+### 单选框
+
+<img src="assets/radio.png" alt="单选框" width="110">
+
+### 多选下拉框
+
+<img src="assets/multi-select.png" alt="多选下拉框" width="240">
+
+### 标签页
+
+<img src="assets/tabs.png" alt="标签页" width="300">
+
+### 表格
+
+<img src="assets/table.png" alt="表格" width="360">
+
+### 文件上传
+
+<img src="assets/file-upload.png" alt="文件上传" width="300">
+
+### 加载提示
+
+<img src="assets/loading.png" alt="加载提示" width="60">
+
+### 空状态
+
+<img src="assets/empty-state.png" alt="空状态" width="260">
 
 ## 通用分布式部署
 
@@ -270,3 +298,31 @@ document.getElementById('status-select').addEventListener('change', event => {
 [源码与用法](date-range/README.md) · [独立演示](date-range/index.html)
 
 开始日期、结束日期均手动输入年月日，不弹出日历。支持标准格式和八位数字输入，校验闰年、真实日期及范围顺序。
+
+### 单选框
+
+[源码与用法](radio/README.md) · [独立演示](radio/index.html)
+
+### 多选下拉框
+
+[源码与用法](multi-select/README.md) · [独立演示](multi-select/index.html)
+
+### 标签页
+
+[源码与用法](tabs/README.md) · [独立演示](tabs/index.html)
+
+### 表格
+
+[源码与用法](table/README.md) · [独立演示](table/index.html)
+
+### 文件上传
+
+[源码与用法](file-upload/README.md) · [独立演示](file-upload/index.html)
+
+### 加载提示
+
+[源码与用法](loading/README.md) · [独立演示](loading/index.html)
+
+### 空状态
+
+[源码与用法](empty-state/README.md) · [独立演示](empty-state/index.html)

@@ -20,6 +20,17 @@
 <script src="toast/toast.js" defer></script>
 <link rel="stylesheet" href="pagination/pagination.css">
 <script src="pagination/pagination.js" defer></script>
+<link rel="stylesheet" href="radio/radio.css">
+<link rel="stylesheet" href="multi-select/multi-select.css">
+<script src="multi-select/multi-select.js" defer></script>
+<link rel="stylesheet" href="tabs/tabs.css">
+<script src="tabs/tabs.js" defer></script>
+<link rel="stylesheet" href="table/table.css">
+<script src="table/table.js" defer></script>
+<link rel="stylesheet" href="file-upload/file-upload.css">
+<script src="file-upload/file-upload.js" defer></script>
+<link rel="stylesheet" href="loading/loading.css">
+<link rel="stylesheet" href="empty-state/empty-state.css">
 <style>body { margin:0; background:#fff; color:#202823; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
 main { max-width:540px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; } h2 { font-size:16px; margin:0 0 8px; }
@@ -74,6 +85,56 @@ a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件�
 <label class="ui-date-range__field"><span class="ui-date-range__label">结束日期</span><input class="ui-date-range__input" type="text" name="end_date" aria-label="结束日期" data-date-end placeholder="/ /" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="10"></label>
 </div><p class="ui-date-range__error" role="status"></p></div>
 </div><a href="date-range/index.html">单独预览</a></section>
+<section id="radio"><h2>单选框</h2><div class="preview" style="width:110px;max-width:100%;box-sizing:border-box"><div class="ui-radio-group" role="group" aria-label="选择方案">
+  <label class="ui-radio"><input type="radio" name="plan" value="a" aria-label="方案 A" checked></label>
+  <label class="ui-radio"><input type="radio" name="plan" value="b" aria-label="方案 B"></label>
+</div></div><a href="radio/index.html">单独预览</a></section>
+<section id="multi-select"><h2>多选下拉框</h2><div class="preview" style="width:240px;max-width:100%;box-sizing:border-box"><details class="ui-multi" data-ui-multi>
+  <summary class="ui-multi__trigger" aria-label="选择状态"><span data-multi-summary data-placeholder="选择状态">选择状态</span><span aria-hidden="true">⌄</span></summary>
+  <div class="ui-multi__panel" role="group" aria-label="可选状态">
+    <label><input type="checkbox" name="statuses" value="enabled">启用</label>
+    <label><input type="checkbox" name="statuses" value="disabled">停用</label>
+    <label><input type="checkbox" name="statuses" value="pending">待审核</label>
+  </div>
+</details></div><a href="multi-select/index.html">单独预览</a></section>
+<section id="tabs"><h2>标签页</h2><div class="preview" style="width:300px;max-width:100%;box-sizing:border-box"><div class="ui-tabs" data-ui-tabs>
+  <div class="ui-tabs__list" role="tablist" aria-label="内容分类">
+    <button type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概览</button>
+    <button type="button" role="tab" id="tab-details" aria-controls="panel-details" aria-selected="false" tabindex="-1">详情</button>
+    <button type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false" tabindex="-1">记录</button>
+  </div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" tabindex="0">概览内容</div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-details" aria-labelledby="tab-details" tabindex="0" hidden>详情内容</div>
+  <div class="ui-tabs__panel" role="tabpanel" id="panel-records" aria-labelledby="tab-records" tabindex="0" hidden>记录内容</div>
+</div></div><a href="tabs/index.html">单独预览</a></section>
+<section id="table"><h2>表格</h2><div class="preview" style="width:360px;max-width:100%;box-sizing:border-box"><div class="ui-table-wrap" tabindex="0" role="region" aria-label="示例数据，可横向滚动">
+  <table class="ui-table" data-ui-table>
+    <caption>示例数据</caption>
+    <thead><tr><th scope="col"><input type="checkbox" data-table-all aria-label="选择全部行"></th><th scope="col" aria-sort="none"><button type="button" data-table-sort="text">名称 <span data-sort-mark aria-hidden="true">↕</span></button></th><th scope="col" aria-sort="none"><button type="button" data-table-sort="number">数量 <span data-sort-mark aria-hidden="true">↕</span></button></th><th scope="col">状态</th></tr></thead>
+    <tbody>
+      <tr data-row-id="a"><td><input type="checkbox" data-table-row aria-label="选择示例 A"></td><td>示例 A</td><td data-sort-value="12">12</td><td>启用</td></tr>
+      <tr data-row-id="b"><td><input type="checkbox" data-table-row aria-label="选择示例 B"></td><td>示例 B</td><td data-sort-value="3">3</td><td>停用</td></tr>
+      <tr data-row-id="c"><td><input type="checkbox" data-table-row aria-label="选择示例 C"></td><td>示例 C</td><td data-sort-value="25">25</td><td>启用</td></tr>
+    </tbody>
+  </table>
+</div></div><a href="table/index.html">单独预览</a></section>
+<section id="file-upload"><h2>文件上传</h2><div class="preview" style="width:300px;max-width:100%;box-sizing:border-box"><div class="ui-upload" data-ui-upload data-max-files="5" data-max-bytes="10485760">
+  <div class="ui-upload__drop" data-upload-drop>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M4 15v5h16v-5"/></svg>
+    <button type="button" data-upload-pick>选择文件</button>
+    <span class="ui-upload__hint">或拖拽到此处</span>
+    <input type="file" data-upload-input aria-label="选择文件" multiple hidden>
+  </div>
+  <ul class="ui-upload__list" data-upload-list></ul>
+  <p class="ui-upload__status" data-upload-status role="status" aria-live="polite"></p>
+  <button class="ui-upload__clear" type="button" data-upload-clear hidden>清空</button>
+</div></div><a href="file-upload/index.html">单独预览</a></section>
+<section id="loading"><h2>加载提示</h2><div class="preview" style="width:60px;max-width:100%;box-sizing:border-box"><span class="ui-loading" role="status"><span class="ui-loading__spinner" aria-hidden="true"></span><span class="ui-loading__sr">加载中，请稍候</span></span></div><a href="loading/index.html">单独预览</a></section>
+<section id="empty-state"><h2>空状态</h2><div class="preview" style="width:260px;max-width:100%;box-sizing:border-box"><div class="ui-empty" role="status">
+  <svg class="ui-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 5-7h12l5 7v13H5V13Z"/><path d="M5 14h7l2 4h4l2-4h7"/></svg>
+  <p class="ui-empty__title">暂无数据</p>
+  <p class="ui-empty__description">有数据后会显示在这里</p>
+</div></div><a href="empty-state/index.html">单独预览</a></section>
 </main><script>window.addEventListener('DOMContentLoaded', () => {
 
 

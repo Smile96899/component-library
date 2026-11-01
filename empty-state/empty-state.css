@@ -1,0 +1,5 @@
+.ui-empty { box-sizing:border-box; max-width:320px; padding:20px 12px; text-align:center; border-radius:16px; background:var(--ui-empty-bg, transparent); color:var(--ui-empty-color, inherit); font:inherit; }
+.ui-empty__icon { display:block; width:32px; height:32px; margin:0 auto 8px; color:var(--ui-empty-icon, #8c949a); }
+.ui-empty__title { margin:0; font-size:14px; font-weight:500; color:inherit; }
+.ui-empty__description { margin:4px 0 0; color:var(--ui-empty-muted, #747b80); font-size:12px; overflow-wrap:anywhere; }
+.ui-empty[hidden] { display:none; }

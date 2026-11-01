@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>文件上传 · 组件库</title>
+<link rel="stylesheet" href="file-upload.css">
+<script src="file-upload.js" defer></script>
+<style>body { margin:0; background:#fff; color:#272d31; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; } main { max-width:540px; margin:0 auto; padding:32px 20px; } h1 { font-size:24px; margin:0 0 24px; } .preview { box-sizing:border-box; width:300px; max-width:100%; padding:8px; }</style></head>
+<body><main><h1>文件上传</h1><div class="preview"><div class="ui-upload" data-ui-upload data-max-files="5" data-max-bytes="10485760">
+  <div class="ui-upload__drop" data-upload-drop>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M4 15v5h16v-5"/></svg>
+    <button type="button" data-upload-pick>选择文件</button>
+    <span class="ui-upload__hint">或拖拽到此处</span>
+    <input type="file" data-upload-input aria-label="选择文件" multiple hidden>
+  </div>
+  <ul class="ui-upload__list" data-upload-list></ul>
+  <p class="ui-upload__status" data-upload-status role="status" aria-live="polite"></p>
+  <button class="ui-upload__clear" type="button" data-upload-clear hidden>清空</button>
+</div></div></main></body></html>
