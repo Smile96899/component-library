@@ -82,7 +82,7 @@
 
 ## 包含内容
 
-- 胶囊按钮：绿色主按钮、箭头、悬停、键盘焦点、禁用样式。
+- 胶囊按钮：无可见文字、保留箭头，支持自定义颜色、悬停、键盘焦点和禁用样式。
 - 胶囊搜索框：输入区始终无边框、无 outline、无阴影；聚焦提示统一显示在外层容器。
 - 搜索词清除按钮，清除后焦点返回输入框。
 
@@ -98,12 +98,12 @@
 ## 胶囊按钮
 
 ```html
-<button class="ui-pill-button" type="button">
-  申请配置 <span aria-hidden="true">↗</span>
+<button class="ui-pill-button" type="button" aria-label="申请配置">
+  <span aria-hidden="true">↗</span>
 </button>
 ```
 
-跳转页面时使用 `<a class="ui-pill-button" href="/apply">申请配置 ↗</a>`。
+按钮不显示文字，`aria-label` 仅供读屏软件识别，接入时改成实际操作名称。跳转页面时使用 `<a class="ui-pill-button" href="/apply" aria-label="申请配置"><span aria-hidden="true">↗</span></a>`。
 
 ## 胶囊搜索框
 
@@ -121,6 +121,23 @@
 输入框使用 `type="text"`，避免部分浏览器为搜索类型附加内置装饰。清除功能由可选的 `components.js` 提供；实际搜索逻辑由接入项目实现。需要 Enter 提交时，将搜索框放进 `<form>` 并监听 `submit`。
 
 ## 自定义
+
+### 按钮颜色
+
+直接引用时默认显示绿色（`#007458`），并非固定只能使用绿色。接入项目后，可在 `components.css` 之后添加以下配置，自行替换颜色值：
+
+```css
+.ui-pill-button {
+  --ui-accent: #2563eb;       /* 默认背景色：示例为蓝色 */
+  --ui-accent-hover: #1d4ed8; /* 鼠标悬停背景色 */
+  --ui-focus: #93c5fd;        /* 键盘聚焦轮廓色 */
+  color: #fff;               /* 箭头或后续添加的文字颜色 */
+}
+```
+
+以上代码统一修改所有胶囊按钮；只修改某一个按钮时，为它添加自定义类，并使用 `.ui-pill-button.my-button` 作为选择器。演示保留默认绿色。
+
+### 尺寸
 
 ```css
 /* 默认铺满父容器，按需限制宽度。 */
