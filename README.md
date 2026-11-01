@@ -16,7 +16,12 @@
 
 <img src="assets/copy-button.png" alt="复制图标" width="48">
 
+## 通用分布式部署
+
+独立部署工具：[通用分布式部署](deployment/README.md)。不同技术栈通过容器镜像和一份配置复用；数据库可选 PostgreSQL 高可用或 TiDB 分布式模式。详见该目录的接入条件与验证范围。
+
 ## 按钮用法
+
 
 源码：[button/button.css](button/button.css) · 独立演示：[button/index.html](button/index.html)
 

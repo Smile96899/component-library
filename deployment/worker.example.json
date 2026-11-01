@@ -1,0 +1,9 @@
+{
+  "name": "my-worker",
+  "namespace": "default",
+  "image": "registry.example.com/team/my-worker:1.0.0",
+  "mode": "worker",
+  "replicas": 2,
+  "parallelSafe": true,
+  "env": {"APP_ENV": "production"}
+}

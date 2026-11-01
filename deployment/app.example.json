@@ -1,0 +1,16 @@
+{
+  "name": "my-app",
+  "namespace": "default",
+  "image": "registry.example.com/team/my-app:1.0.0",
+  "mode": "http",
+  "replicas": 2,
+  "port": 8080,
+  "healthPath": "/healthz",
+  "readyPath": "/readyz",
+  "serviceType": "ClusterIP",
+  "env": {"APP_ENV": "production"},
+  "resources": {
+    "requests": {"cpu": "100m", "memory": "128Mi"},
+    "limits": {"cpu": "1000m", "memory": "512Mi"}
+  }
+}

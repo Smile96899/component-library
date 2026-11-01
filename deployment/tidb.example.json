@@ -1,0 +1,13 @@
+{
+  "name": "tidb-app",
+  "image": "registry.example.com/team/my-app:1.0.0",
+  "port": 8080,
+  "replicas": 2,
+  "database": {
+    "mode": "tidb-distributed",
+    "storageClass": "replace-with-your-storage-class",
+    "storageSize": "20Gi",
+    "version": "v8.5.7",
+    "initializerImage": "tnir/mysqlclient:latest"
+  }
+}
