@@ -1,0 +1,7 @@
+.ui-toast-trigger { padding:9px 18px; min-height:40px; border:1px solid #adb4b9; border-radius:9999px; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.ui-toast-trigger:focus-visible, .ui-toast__close:focus-visible { outline:2px solid var(--ui-toast-focus, #747b80); outline-offset:2px; }
+.ui-toast-region { position:fixed; z-index:10000; right:16px; bottom:16px; display:grid; gap:10px; width:320px; max-width:calc(100% - 32px); pointer-events:none; }
+.ui-toast { display:flex; align-items:center; gap:12px; box-sizing:border-box; padding:12px 14px; border:1px solid var(--ui-toast-border, #c6ccd0); border-radius:12px; background:var(--ui-toast-bg, #fff); color:var(--ui-toast-color, #272d31); box-shadow:0 4px 16px #00000012; font:inherit; line-height:1.5; pointer-events:auto; }
+.ui-toast__message { flex:1; min-width:0; overflow-wrap:anywhere; }
+.ui-toast__close { display:inline-flex; justify-content:center; align-items:center; flex-shrink:0; width:32px; height:32px; padding:0; border:0; border-radius:6px; background:transparent; color:inherit; font:inherit; font-size:20px; cursor:pointer; }
+@media(pointer:coarse) { .ui-toast__close { width:44px; height:44px; } }

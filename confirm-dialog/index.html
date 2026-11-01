@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>确认弹窗 · 组件库</title>
+<link rel="stylesheet" href="confirm-dialog.css">
+<script src="confirm-dialog.js" defer></script>
+<style>body { margin:0; background:#fff; color:#272d31; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
+main { max-width:540px; margin:0 auto; padding:32px 20px; }
+h1 { font-size:24px; margin:0 0 24px; }
+.preview { max-width:388px; padding:8px; box-sizing:border-box; }
+.demo-status { color:#656d73; min-height:1.6em; }
+</style></head><body><main><h1>确认弹窗</h1><div class="preview"><button class="ui-confirm-trigger" type="button" data-ui-confirm="confirm-example">打开确认弹窗</button>
+<dialog class="ui-confirm" id="confirm-example" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+  <h2 class="ui-confirm__title" id="confirm-title">确认操作</h2>
+  <p class="ui-confirm__description" id="confirm-description">确定要继续此操作吗？</p>
+  <div class="ui-confirm__actions">
+    <button class="ui-confirm__button" type="button" data-ui-confirm-cancel>取消</button>
+    <button class="ui-confirm__button" type="button" data-ui-confirm-accept>确认</button>
+  </div>
+</dialog></div><p class="demo-status" id="confirm-demo-status" role="status"></p></main><script>window.addEventListener('DOMContentLoaded', () => { document.getElementById('confirm-example').addEventListener('ui:confirm', event => { document.getElementById('confirm-demo-status').textContent = event.detail.confirmed ? '已确认（演示）' : '已取消'; }); });</script></body></html>

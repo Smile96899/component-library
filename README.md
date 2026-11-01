@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制图标、导出图标、筛选图标、下拉选择框分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮、搜索框和下拉选择框为胶囊圆角，复制、导出与筛选显示小图标，颜色可自行配置。
+按钮、搜索框、复制图标、导出图标、筛选图标、下拉选择框分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮、搜索框和下拉选择框为胶囊圆角，复制、导出与筛选显示小图标，颜色可自行配置。另包含输入框、开关、复选框、确认弹窗、消息提示和分页。
 
 ## 样式预览
 
@@ -27,6 +27,30 @@
 ### 下拉选择框
 
 <img src="assets/dropdown-select.png" alt="下拉选择框" width="196">
+
+### 输入框
+
+<img src="assets/text-input.png" alt="输入框" width="280">
+
+### 开关
+
+<img src="assets/toggle-switch.png" alt="开关" width="160">
+
+### 复选框
+
+<img src="assets/checkbox.png" alt="复选框" width="160">
+
+### 确认弹窗
+
+<img src="assets/confirm-dialog.png" alt="确认弹窗" width="280">
+
+### 消息提示
+
+<img src="assets/toast.png" alt="消息提示" width="260">
+
+### 分页
+
+<img src="assets/pagination.png" alt="分页" width="280">
 
 ## 通用分布式部署
 
@@ -208,3 +232,31 @@ document.getElementById('status-select').addEventListener('change', event => {
   console.log('选中值：', event.target.value);
 });
 ```
+
+## 常用基础组件
+
+新增组件均独立存放，不依赖原有按钮或其他组件。默认中性配色，颜色可通过各自 CSS 变量覆盖。
+
+### 输入框
+
+[源码与用法](text-input/README.md) · [独立演示](text-input/index.html)
+
+### 开关
+
+[源码与用法](toggle-switch/README.md) · [独立演示](toggle-switch/index.html)
+
+### 复选框
+
+[源码与用法](checkbox/README.md) · [独立演示](checkbox/index.html)
+
+### 确认弹窗
+
+[源码与用法](confirm-dialog/README.md) · [独立演示](confirm-dialog/index.html)
+
+### 消息提示
+
+[源码与用法](toast/README.md) · [独立演示](toast/index.html)
+
+### 分页
+
+[源码与用法](pagination/README.md) · [独立演示](pagination/index.html)

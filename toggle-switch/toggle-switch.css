@@ -1,0 +1,14 @@
+/* 独立开关，使用原生 checkbox 的 checked、disabled 和 change。 */
+.ui-toggle { display:inline-flex; align-items:center; gap:10px; min-height:44px; color:inherit; font:inherit; cursor:pointer; }
+.ui-toggle__control {
+  appearance:none; -webkit-appearance:none; position:relative; flex-shrink:0;
+  box-sizing:border-box; width:40px; height:24px; margin:0;
+  border:1px solid var(--ui-toggle-border, #a5abb0); border-radius:9999px;
+  background:var(--ui-toggle-off, #e3e6e8); cursor:inherit;
+}
+.ui-toggle__control::before { content:""; display:block; position:absolute; width:18px; height:18px; top:2px; left:2px; border-radius:50%; background:var(--ui-toggle-thumb, #fff); box-shadow:0 1px 2px #0003; transition:transform .15s; }
+.ui-toggle__control:checked { background:var(--ui-toggle-on, #444b50); border-color:var(--ui-toggle-on, #444b50); }
+.ui-toggle__control:checked::before { transform:translateX(16px); }
+.ui-toggle__control:focus-visible { outline:2px solid var(--ui-toggle-focus, #747b80); outline-offset:3px; }
+.ui-toggle__control:disabled { opacity:.45; cursor:not-allowed; }
+@media(prefers-reduced-motion:reduce) { .ui-toggle__control::before { transition:none; } }

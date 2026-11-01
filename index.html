@@ -9,11 +9,20 @@
 <script src="export-button/export-button.js" defer></script>
 <link rel="stylesheet" href="filter-button/filter-button.css">
 <link rel="stylesheet" href="dropdown-select/dropdown-select.css">
+<link rel="stylesheet" href="text-input/text-input.css">
+<link rel="stylesheet" href="toggle-switch/toggle-switch.css">
+<link rel="stylesheet" href="checkbox/checkbox.css">
+<link rel="stylesheet" href="confirm-dialog/confirm-dialog.css">
+<script src="confirm-dialog/confirm-dialog.js" defer></script>
+<link rel="stylesheet" href="toast/toast.css">
+<script src="toast/toast.js" defer></script>
+<link rel="stylesheet" href="pagination/pagination.css">
+<script src="pagination/pagination.js" defer></script>
 <style>body { margin:0; background:#fff; color:#202823; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
 main { max-width:540px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; } h2 { font-size:16px; margin:0 0 8px; }
 section { margin-bottom:28px; } .preview { max-width:388px; padding:8px; }
-.ui-copy-status:empty { display:none; } #copy-button .preview, #export-button .preview, #filter-button .preview, #dropdown-select .preview { width:fit-content; }
+.ui-copy-status:empty { display:none; } #copy-button .preview, #export-button .preview, #filter-button .preview, #dropdown-select .preview, #toggle-switch .preview, #checkbox .preview { width:fit-content; }
 a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件库</h1><section id="button"><h2>按钮</h2><div class="preview"><button class="ui-pill-button" type="button" aria-label="申请配置"><span aria-hidden="true">↗</span></button></div><a href="button/index.html">单独预览</a></section>
 <section id="search"><h2>搜索框</h2><div class="preview"><div class="ui-search" data-ui-search>
   <svg class="ui-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
@@ -41,4 +50,24 @@ a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件�
 </select>
 <svg class="ui-select__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
 </div></div><a href="dropdown-select/index.html">单独预览</a></section>
-</main></body></html>
+<section id="text-input"><h2>输入框</h2><div class="preview"><input class="ui-input" type="text" name="name" aria-label="输入内容" placeholder="请输入内容"></div><a href="text-input/index.html">单独预览</a></section>
+<section id="toggle-switch"><h2>开关</h2><div class="preview"><label class="ui-toggle"><input class="ui-toggle__control" type="checkbox" role="switch" name="notifications"><span>启用通知</span></label></div><a href="toggle-switch/index.html">单独预览</a></section>
+<section id="checkbox"><h2>复选框</h2><div class="preview"><label class="ui-checkbox"><input class="ui-checkbox__control" type="checkbox" name="selected" checked><span>选择此项</span></label></div><a href="checkbox/index.html">单独预览</a></section>
+<section id="confirm-dialog"><h2>确认弹窗</h2><div class="preview"><button class="ui-confirm-trigger" type="button" data-ui-confirm="confirm-example">打开确认弹窗</button>
+<dialog class="ui-confirm" id="confirm-example" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+  <h2 class="ui-confirm__title" id="confirm-title">确认操作</h2>
+  <p class="ui-confirm__description" id="confirm-description">确定要继续此操作吗？</p>
+  <div class="ui-confirm__actions">
+    <button class="ui-confirm__button" type="button" data-ui-confirm-cancel>取消</button>
+    <button class="ui-confirm__button" type="button" data-ui-confirm-accept>确认</button>
+  </div>
+</dialog></div><p class="demo-status" id="confirm-demo-status" role="status"></p><a href="confirm-dialog/index.html">单独预览</a></section>
+<section id="toast"><h2>消息提示</h2><div class="preview"><button class="ui-toast-trigger" type="button" id="toast-demo">显示消息提示</button></div><a href="toast/index.html">单独预览</a></section>
+<section id="pagination"><h2>分页</h2><div class="preview"><nav class="ui-pagination" aria-label="列表分页" data-ui-pagination data-total="95" data-page-size="10" data-page="1"></nav></div><p class="demo-status" id="pagination-demo-status" role="status">当前第 1 页，共 10 页</p><a href="pagination/index.html">单独预览</a></section>
+</main><script>window.addEventListener('DOMContentLoaded', () => {
+
+
+document.getElementById('confirm-example').addEventListener('ui:confirm', event => { document.getElementById('confirm-demo-status').textContent = event.detail.confirmed ? '已确认（演示）' : '已取消'; });
+document.getElementById('toast-demo').addEventListener('click', () => { UiToast.show('操作已完成'); });
+document.querySelector('[data-ui-pagination]').addEventListener('ui:page-change', event => { document.getElementById('pagination-demo-status').textContent = '当前第 ' + event.detail.page + ' 页，共 ' + event.detail.pages + ' 页'; });
+ });</script></body></html>

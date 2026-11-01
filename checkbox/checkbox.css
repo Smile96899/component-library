@@ -1,0 +1,13 @@
+/* 独立复选框，支持 checked、disabled 与原生 indeterminate。 */
+.ui-checkbox { display:inline-flex; align-items:center; gap:10px; min-height:44px; font:inherit; color:inherit; cursor:pointer; }
+.ui-checkbox__control {
+  appearance:none; -webkit-appearance:none; display:grid; place-content:center;
+  box-sizing:border-box; flex-shrink:0; width:18px; height:18px; margin:0;
+  border:1px solid var(--ui-checkbox-border, #8c949a); border-radius:4px;
+  background:var(--ui-checkbox-bg, transparent); cursor:inherit;
+}
+.ui-checkbox__control:checked, .ui-checkbox__control:indeterminate { background:var(--ui-checkbox-active, #444b50); border-color:var(--ui-checkbox-active, #444b50); }
+.ui-checkbox__control:checked::before { content:""; width:8px; height:4px; border-left:2px solid var(--ui-checkbox-mark, #fff); border-bottom:2px solid var(--ui-checkbox-mark, #fff); transform:translateY(-1px) rotate(-45deg); }
+.ui-checkbox__control:indeterminate::before { content:""; width:8px; height:2px; border:0; transform:none; background:var(--ui-checkbox-mark, #fff); }
+.ui-checkbox__control:focus-visible { outline:2px solid var(--ui-checkbox-focus, #747b80); outline-offset:3px; }
+.ui-checkbox__control:disabled { opacity:.45; cursor:not-allowed; }

@@ -1,0 +1,12 @@
+/* 独立输入框：单层边框，颜色可覆盖。 */
+.ui-input {
+  box-sizing:border-box; width:100%; max-width:388px; min-height:44px;
+  padding:10px 16px; border:1px solid var(--ui-input-border, #b9bfc3);
+  border-radius:9999px; background:var(--ui-input-bg, transparent);
+  color:var(--ui-input-color, inherit); font:inherit; line-height:1.5;
+}
+.ui-input::placeholder { color:var(--ui-input-placeholder, #747b80); opacity:1; }
+.ui-input:focus { outline:none; border-color:var(--ui-input-focus, #42484c); box-shadow:0 0 0 2px color-mix(in srgb, var(--ui-input-focus, #42484c) 14%, transparent); }
+.ui-input:disabled { opacity:.5; cursor:not-allowed; }
+.ui-input[aria-invalid="true"] { border-style:dashed; border-width:2px; }
+@media(pointer:coarse) { .ui-input { font-size:16px; } }
