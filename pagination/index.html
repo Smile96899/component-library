@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="pagination.css">
 <script src="pagination.js" defer></script>
 <style>body { margin:0; background:#fff; color:#272d31; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
-main { max-width:540px; margin:0 auto; padding:32px 20px; }
+main { max-width:720px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; }
-.preview { max-width:388px; padding:8px; box-sizing:border-box; }
+.preview { max-width:680px; padding:8px; box-sizing:border-box; }
 .demo-status { color:#656d73; min-height:1.6em; }
 </style></head><body><main><h1>分页</h1><div class="preview"><nav class="ui-pagination" aria-label="列表分页" data-ui-pagination data-total="95" data-page-size="10" data-page="1"></nav></div><p class="demo-status" id="pagination-demo-status" role="status">当前第 1 页，共 10 页</p></main><script>window.addEventListener('DOMContentLoaded', () => { document.querySelector('[data-ui-pagination]').addEventListener('ui:page-change', event => { document.getElementById('pagination-demo-status').textContent = '当前第 ' + event.detail.page + ' 页，共 ' + event.detail.pages + ' 页'; }); });</script></body></html>

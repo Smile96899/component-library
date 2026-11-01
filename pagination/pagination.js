@@ -14,13 +14,16 @@
   function refresh(element) {
     const state = read(element);
     element.replaceChildren();
+    const row = document.createElement('div');
+    row.className = 'ui-pagination__row';
+    element.append(row);
     function button(label, page, disabled = false, current = false) {
       const item = document.createElement('button');
       item.className = 'ui-pagination__button'; item.type = 'button'; item.textContent = label;
       item.dataset.page = String(page); item.disabled = disabled;
       item.setAttribute('aria-label', label === '‹' ? '上一页' : label === '›' ? '下一页' : '第 ' + page + ' 页');
       if (current) item.setAttribute('aria-current', 'page');
-      element.append(item);
+      row.append(item);
     }
     button('‹', state.page - 1, state.page === 1 || !state.total);
     let pages;
@@ -32,7 +35,7 @@
     let previous = 0;
     pages.forEach(page => {
       if (page - previous > 1) {
-        const dots = document.createElement('span'); dots.className = 'ui-pagination__ellipsis'; dots.textContent = '…'; dots.setAttribute('aria-hidden', 'true'); element.append(dots);
+        const dots = document.createElement('span'); dots.className = 'ui-pagination__ellipsis'; dots.textContent = '…'; dots.setAttribute('aria-hidden', 'true'); row.append(dots);
       }
       button(String(page), page, !state.total, page === state.page); previous = page;
     });
@@ -58,7 +61,8 @@
     jump.append(label, go);
     const feedback = document.createElement('span');
     feedback.className = 'ui-pagination__feedback'; feedback.setAttribute('role', 'status');
-    element.append(total, jump, feedback);
+    row.append(total, jump);
+    element.append(feedback);
     return state;
   }
   function move(element, next) {

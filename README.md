@@ -50,7 +50,7 @@
 
 ### 分页
 
-<img src="assets/pagination.png" alt="分页" width="280">
+<img src="assets/pagination.png" alt="分页：页码、总页数与跳转同一行" width="420">
 
 ## 通用分布式部署
 
