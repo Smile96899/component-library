@@ -1,0 +1,25 @@
+/* 独立筛选图标，与复制、导出图标保持相同尺寸。 */
+.ui-filter {
+  --ui-filter-color: #617369;
+  --ui-filter-hover: #007458;
+  --ui-focus: #5bd4b3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ui-filter-color);
+  font: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.ui-filter:hover:not(:disabled) { color: var(--ui-filter-hover); }
+.ui-filter:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
+.ui-filter:disabled { opacity: .5; cursor: not-allowed; }
+.ui-filter__icon { width: 18px; height: 18px; flex-shrink: 0; }
+@media (pointer: coarse) { .ui-filter { width: 44px; height: 44px; } }

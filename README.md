@@ -1,6 +1,6 @@
 # 组件库
 
-按钮、搜索框、复制图标、导出图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，复制与导出只显示小图标，颜色可自行配置。
+按钮、搜索框、复制图标、导出图标、筛选图标分别存放，互不依赖；每个组件都能单独引入、单独预览。按钮和搜索框为胶囊圆角，复制、导出与筛选只显示小图标，颜色可自行配置。
 
 ## 样式预览
 
@@ -19,6 +19,10 @@
 ### 导出图标
 
 <img src="assets/export-button.png" alt="导出图标" width="48">
+
+### 筛选图标
+
+<img src="assets/filter-button.png" alt="筛选图标" width="48">
 
 ## 通用分布式部署
 
@@ -103,6 +107,25 @@
 
 下载在浏览器本地触发。提示“已开始下载”表示已发起下载，并不代表用户已经保存文件；空数据或格式错误时显示提示。可监听 `ui:export` 事件获取 `event.detail.filename` 和 `format`。
 
+## 筛选图标用法
+
+源码：[filter-button/filter-button.css](filter-button/filter-button.css) · 独立演示：[filter-button/index.html](filter-button/index.html)
+
+与复制、导出图标相同：18px 图标、32 × 32px 点击区域，无文字、无背景、无边框，触屏点击区域为 44 × 44px。只需独立 CSS，不依赖其他组件或图标库。
+
+```html
+<link rel="stylesheet" href="filter-button/filter-button.css">
+<button class="ui-filter" type="button" aria-label="筛选" id="filter-button">
+  <svg class="ui-filter__icon" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+       stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 4h16l-6 7v8l-4-2v-6L4 4Z"/>
+  </svg>
+</button>
+```
+
+这是独立的筛选入口图标，不预设业务筛选条件。接入时给按钮绑定 `click`，打开项目自己的筛选面板或执行筛选逻辑。独立演示只反馈点击；若绑定展开面板，请同步维护 `aria-expanded` 和 `aria-controls`。
+
 ## 分别配置颜色
 
 直接引用时普通按钮默认绿色，复制图标默认灰绿色。以下配置放在组件 CSS 后面，分别修改，互不影响：
@@ -127,6 +150,13 @@
 .ui-export {
   --ui-export-color: #617369;
   --ui-export-hover: #007458;
+  --ui-focus: #5bd4b3;
+}
+
+/* 筛选图标。 */
+.ui-filter {
+  --ui-filter-color: #617369;
+  --ui-filter-hover: #007458;
   --ui-focus: #5bd4b3;
 }
 ```

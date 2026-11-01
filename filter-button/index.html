@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>筛选图标 · 组件库</title>
+  <link rel="stylesheet" href="filter-button.css">
+  <style>
+    body { margin:0; color:#202823; background:#fff; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
+    main { max-width:540px; margin:0 auto; padding:32px 20px; }
+    h1 { font-size:24px; margin:0 0 24px; }
+    .preview { width:fit-content; padding:8px; }
+    .status { color:#52645a; min-height:1.6em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>筛选图标</h1>
+    <div class="preview">
+      <button class="ui-filter" type="button" aria-label="筛选" id="filter-demo">
+        <svg class="ui-filter__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16l-6 7v8l-4-2v-6L4 4Z"/></svg>
+      </button>
+    </div>
+    <p class="status" id="filter-status" role="status"></p>
+  </main>
+  <script>
+    document.getElementById('filter-demo').addEventListener('click', () => {
+      document.getElementById('filter-status').textContent = '筛选按钮已点击（演示）';
+    });
+  </script>
+</body>
+</html>

@@ -7,11 +7,12 @@
 <script src="copy-button/copy-button.js" defer></script>
 <link rel="stylesheet" href="export-button/export-button.css">
 <script src="export-button/export-button.js" defer></script>
+<link rel="stylesheet" href="filter-button/filter-button.css">
 <style>body { margin:0; background:#fff; color:#202823; font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif; }
 main { max-width:540px; margin:0 auto; padding:32px 20px; }
 h1 { font-size:24px; margin:0 0 24px; } h2 { font-size:16px; margin:0 0 8px; }
 section { margin-bottom:28px; } .preview { max-width:388px; padding:8px; }
-.ui-copy-status:empty { display:none; } #copy-button .preview, #export-button .preview { width:fit-content; }
+.ui-copy-status:empty { display:none; } #copy-button .preview, #export-button .preview, #filter-button .preview { width:fit-content; }
 a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件库</h1><section id="button"><h2>按钮</h2><div class="preview"><button class="ui-pill-button" type="button" aria-label="申请配置"><span aria-hidden="true">↗</span></button></div><a href="button/index.html">单独预览</a></section>
 <section id="search"><h2>搜索框</h2><div class="preview"><div class="ui-search" data-ui-search>
   <svg class="ui-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
@@ -27,4 +28,9 @@ a { color:#007458; } p { color:#52645a; }</style></head><body><main><h1>组件�
 <svg class="ui-export__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
 </button></div><a href="export-button/index.html">单独预览</a>
 <script type="application/json" id="export-data">[{"名称":"示例 A","状态":"启用"},{"名称":"示例 B","状态":"停用"}]</script>
-</section></main></body></html>
+</section>
+<section id="filter-button"><h2>筛选图标</h2><div class="preview">
+<button class="ui-filter" type="button" aria-label="筛选">
+<svg class="ui-filter__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16l-6 7v8l-4-2v-6L4 4Z"/></svg>
+</button></div><a href="filter-button/index.html">单独预览</a></section>
+</main></body></html>
